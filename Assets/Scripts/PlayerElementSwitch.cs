@@ -2,15 +2,68 @@ using UnityEngine;
 
 public class PlayerElementSwitch : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public enum Element
     {
-        
+        Water,
+        Sand,
+        Nature
     }
 
-    // Update is called once per frame
+    public Element currentElement = Element.Water;
+
+    public SpriteRenderer spriteRenderer;
+    public Color waterColor = Color.cyan;
+    public Color sandColor = new Color(0.9f, 0.8f, 0.5f);
+    public Color natureColor = Color.green;
+
+    void Start()
+    {
+        UpdateVisual();
+    }
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentElement = Element.Water;
+            UpdateVisual();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentElement = Element.Sand;
+            UpdateVisual();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentElement = Element.Nature;
+            UpdateVisual();
+        }
+    }
+
+    void UpdateVisual()
+    {
+        if (spriteRenderer == null) return;
+
+        switch (currentElement)
+        {
+            case Element.Water:
+                spriteRenderer.color = waterColor;
+                break;
+
+            case Element.Sand:
+                spriteRenderer.color = sandColor;
+                break;
+
+            case Element.Nature:
+                spriteRenderer.color = natureColor;
+                break;
+        }
+    }
+
+    public Element GetCurrentElement()
+    {
+        return currentElement;
     }
 }
