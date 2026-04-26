@@ -10,6 +10,6 @@ public class ElementUI : MonoBehaviour
     {
         if (playerElementSwitch == null || elementText == null) return;
 
-        elementText.text = "Element: " + playerElementSwitch.currentElement.ToString();
+        elementText.text = "Current Spell " + playerElementSwitch.currentElement.ToString();
     }
 }
