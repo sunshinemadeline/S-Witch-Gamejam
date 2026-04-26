@@ -14,7 +14,7 @@ public class PlayerElementSwitch : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Color waterColor = Color.cyan;
     public Color sandColor = new Color(0.9f, 0.8f, 0.5f);
-    public Color natureColor = Color.green;
+    public Color natureColor = new Color(40, 96, 0);
 
     void Start()
     {
