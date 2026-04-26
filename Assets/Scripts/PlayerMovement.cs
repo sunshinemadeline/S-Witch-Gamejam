@@ -3,9 +3,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 5f;
-    public float jumpForce = 12f;
-    public float climbSpeed = 4f;
+    public float moveSpeed = 100f;
+    public float jumpForce = 150f;
+    public float climbSpeed = 5f;
     public float normalGravity = 3f;
 
     [Header("Ground Check")]
