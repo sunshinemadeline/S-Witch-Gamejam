@@ -24,6 +24,11 @@ public class FireBarrier : Interactable
             blockingCollider.enabled = false;
         }
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.fireExtinguishSFX);
+        }
+
         Debug.Log("Fire extinguished!");
     }
 }

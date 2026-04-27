@@ -28,6 +28,10 @@ public class Interactable : MonoBehaviour
         else
         {
             Debug.Log("Wrong element! Need: " + requiredElement);
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.wrongElementSFX);
+            }
         }
     }
 

@@ -30,6 +30,11 @@ public class SandPlatform : Interactable
             sandplatformsprite2.SetActive(true);
         }
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.sandPlatformSFX);
+        }
+
         Debug.Log("Sand platform created!");
 
         yield return new WaitForSeconds(activeTime);

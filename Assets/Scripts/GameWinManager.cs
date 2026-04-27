@@ -8,6 +8,10 @@ public class GameWinManager : MonoBehaviour
     public void ShowWinScreen()
     {
         winScreen.SetActive(true);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.winSFX);
+        }
         Time.timeScale = 0f;
     }
 

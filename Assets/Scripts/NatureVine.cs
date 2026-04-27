@@ -22,6 +22,11 @@ public class NatureVine : Interactable
             vinesprite_1.SetActive(true);
         }
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.vineGrowSFX);
+        }
+
         Debug.Log("Vine grown!");
     }
 }
