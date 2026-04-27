@@ -30,6 +30,6 @@ public class GameWinManager : MonoBehaviour
     public void LoadNextLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level1");
     }
 }
