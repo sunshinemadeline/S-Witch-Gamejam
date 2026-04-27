@@ -9,12 +9,16 @@ public class PlayerElementSwitch : MonoBehaviour
         Nature
     }
 
+    [Header("Current Element")]
     public Element currentElement = Element.Water;
 
+    [Header("Sprite Renderer")]
     public SpriteRenderer spriteRenderer;
-    public Color waterColor = Color.cyan;
-    public Color sandColor = new Color(0.9f, 0.8f, 0.5f);
-    public Color natureColor = new Color(40, 96, 0);
+
+    [Header("Element Sprites")]
+    public Sprite waterSprite;
+    public Sprite sandSprite;
+    public Sprite natureSprite;
 
     void Start()
     {
@@ -49,15 +53,15 @@ public class PlayerElementSwitch : MonoBehaviour
         switch (currentElement)
         {
             case Element.Water:
-                spriteRenderer.color = waterColor;
+                spriteRenderer.sprite = waterSprite;
                 break;
 
             case Element.Sand:
-                spriteRenderer.color = sandColor;
+                spriteRenderer.sprite = sandSprite;
                 break;
 
             case Element.Nature:
-                spriteRenderer.color = natureColor;
+                spriteRenderer.sprite = natureSprite;
                 break;
         }
     }
