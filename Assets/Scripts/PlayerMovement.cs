@@ -3,14 +3,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 100f;
-    public float jumpForce = 150f;
-    public float climbSpeed = 5f;
+    public float moveSpeed = 5f;
+    public float jumpForce = 12f;
+    public float climbSpeed = 4f;
     public float normalGravity = 3f;
 
     [Header("Ground Check")]
     public Transform groundCheck;
-    public float groundCheckRadius = 0.2f;
+    public float groundCheckRadius = 0.25f;
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isClimbing = false;
     private bool isInClimbZone = false;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -31,11 +31,16 @@ public class PlayerMovement : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(
+            groundCheck.position,
+            groundCheckRadius,
+            groundLayer
+        );
 
         if (!isClimbing && Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+
             if (AudioManager.Instance != null)
             {
                 AudioManager.Instance.PlaySFX(AudioManager.Instance.jumpSFX);
@@ -46,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
         {
             isClimbing = true;
         }
-        else if (!isInClimbZone)
+
+        if (!isInClimbZone)
         {
             isClimbing = false;
         }
@@ -62,8 +68,30 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.gravityScale = normalGravity;
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+
+            float targetVelocityX = moveInput * moveSpeed;
+            rb.linearVelocity = new Vector2(targetVelocityX, rb.linearVelocity.y);
         }
+    }
+
+    public bool IsGrounded()
+    {
+        return isGrounded;
+    }
+
+    public float GetVerticalVelocity()
+    {
+        return rb.linearVelocity.y;
+    }
+
+    public float GetMoveInput()
+    {
+        return moveInput;
+    }
+
+    public bool IsClimbing()
+    {
+        return isClimbing;
     }
 
     public void ExitClimb(Vector2 boostVelocity)
@@ -89,20 +117,5 @@ public class PlayerMovement : MonoBehaviour
             isInClimbZone = false;
             isClimbing = false;
         }
-    }
-
-    public bool IsGrounded()
-    {
-        return isGrounded;
-    }
-
-    public float GetVerticalVelocity()
-    {
-        return rb.linearVelocity.y;
-    }
-
-    public float GetMoveInput()
-    {
-        return moveInput;
     }
 }

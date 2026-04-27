@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4815525500803007489}
   - component: {fileID: 5915145383172908643}
   - component: {fileID: 4400254411141943677}
+  - component: {fileID: 5452821384168104152}
   m_Layer: 0
   m_Name: FireVisual
   m_TagString: Untagged
@@ -138,6 +139,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5452821384168104152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6844870243491317604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18aae6e8be4246199cf3fa3a60ceeba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleSpriteAnimator
+  spriteRenderer: {fileID: 5915145383172908643}
+  animationFrames:
+  - {fileID: 8334651344603559088, guid: 05085922de51f499e9ddefc9629893f7, type: 3}
+  - {fileID: -8990929674756197408, guid: 75f1d6bee638f42aba286db6b8f9eb52, type: 3}
+  - {fileID: -7119067283651053085, guid: f086ae6a5cf1e4db28fa4b17b3943f91, type: 3}
+  frameRate: 8
 --- !u!1 &7311128236262568167
 GameObject:
   m_ObjectHideFlags: 0
