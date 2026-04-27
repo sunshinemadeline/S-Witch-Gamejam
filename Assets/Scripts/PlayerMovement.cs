@@ -86,4 +86,19 @@ public class PlayerMovement : MonoBehaviour
             isClimbing = false;
         }
     }
+
+    public bool IsGrounded()
+    {
+        return isGrounded;
+    }
+
+    public float GetVerticalVelocity()
+    {
+        return rb.linearVelocity.y;
+    }
+
+    public float GetMoveInput()
+    {
+        return moveInput;
+    }
 }

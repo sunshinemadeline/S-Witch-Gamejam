@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7ecdbb0cd4011497993a501e9761c433
+guid: 12a739bc3d2c141ccae53c7621d0dce4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2057947446794371924
-    second: water_witch_idle_1_0
+      213: -7741024500424602002
+    second: water_witch_run_0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: water_witch_idle_1_0
+      name: water_witch_run_0_0
       rect:
         serializedVersion: 2
         x: 4
-        y: 8
+        y: 11
         width: 69
-        height: 110
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cac366b53b3b073e0800000000000000
-      internalID: -2057947446794371924
+      spriteID: e6e88960b3b529490800000000000000
+      internalID: -7741024500424602002
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      water_witch_idle_1_0: -2057947446794371924
+      water_witch_run_0_0: -7741024500424602002
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -836,6 +836,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 792533077983872391, guid: 4d16e5fec889248569496b87b6642f3a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 792533077983872391, guid: 4d16e5fec889248569496b87b6642f3a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.68235296
+      objectReference: {fileID: 0}
+    - target: {fileID: 792533077983872391, guid: 4d16e5fec889248569496b87b6642f3a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99607843
+      objectReference: {fileID: 0}
     - target: {fileID: 5321031549999384511, guid: 4d16e5fec889248569496b87b6642f3a, type: 3}
       propertyPath: m_Name
       value: SandPlatformSpot
@@ -3168,6 +3180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499083418}
   - component: {fileID: 1499083417}
+  - component: {fileID: 1499083419}
   m_Layer: 0
   m_Name: WitchSprite
   m_TagString: Untagged
@@ -3249,6 +3262,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1571869172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1499083419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499083416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98d6b0f4cc48472a8694fc686ebdb26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WitchSpriteAnimator
+  spriteRenderer: {fileID: 1499083417}
+  playerMovement: {fileID: 1571869168}
+  elementSwitch: {fileID: 1571869173}
+  waterIdleSprites:
+  - {fileID: 5832261104388927974, guid: b2c9c4da99b404c2186c7de52f8ead23, type: 3}
+  - {fileID: -2057947446794371924, guid: 7ecdbb0cd4011497993a501e9761c433, type: 3}
+  - {fileID: 4362502482133716685, guid: eb7e0fc642ec048d0944a2ed2b281106, type: 3}
+  waterRunSprites:
+  - {fileID: -7741024500424602002, guid: 12a739bc3d2c141ccae53c7621d0dce4, type: 3}
+  - {fileID: 6367788777392318997, guid: 3bb0487d8331b433a80ab4827cd32895, type: 3}
+  waterJumpSprite: {fileID: 1517871992805995415, guid: 81e77c94d6372452e8e8b433175e18d9, type: 3}
+  waterFallSprite: {fileID: 5684560256059446800, guid: 975f9308bb30841bd8c54683a08d1631, type: 3}
+  sandIdleSprites:
+  - {fileID: -6936906221926352604, guid: fa716c36e60734fea8955fde02ce232b, type: 3}
+  - {fileID: -7076900257480207831, guid: 18a6f39dfa8474ff2b078d3145a02970, type: 3}
+  sandRunSprites:
+  - {fileID: -2113488174071866024, guid: 1b6a87eaa1cdb4d62b203de82a6416ce, type: 3}
+  - {fileID: -9050150938660649625, guid: 2c0320409d2304c488a48280ab5a28ea, type: 3}
+  sandJumpSprite: {fileID: 8809763738428349072, guid: d62850171c5544fae966a0882c20edec, type: 3}
+  sandFallSprite: {fileID: -3801127798557836189, guid: 40f22d3e0e0234688be399a9eb67fb32, type: 3}
+  natureIdleSprites:
+  - {fileID: 2294202180577567580, guid: dd0d185df9fda43e49fd1036b1a2e234, type: 3}
+  - {fileID: 295432242331830699, guid: 74728172c39354d7ba9111fa9b11f4b3, type: 3}
+  - {fileID: 2818956867249823297, guid: 7a6fe7dd3108e42bd9b7323975e5dc66, type: 3}
+  natureRunSprites:
+  - {fileID: 7862322695416078415, guid: 670587cf53ff94d87a22f49eec414007, type: 3}
+  - {fileID: 5573276468910139507, guid: 6e45f6ea6d41d4b53b4177cce3b77c5c, type: 3}
+  - {fileID: -8880669326932082371, guid: 95b70da168718477c9d15d2b5229950d, type: 3}
+  natureJumpSprite: {fileID: -803049704133478239, guid: 9ce18899594a34802b5e4a07c6e3d2de, type: 3}
+  natureFallSprite: {fileID: -6006184137026523829, guid: 17faf492689294342b9ed364174fd90d, type: 3}
+  idleFrameRate: 3
+  runFrameRate: 8
 --- !u!1 &1571869167
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,10 +3406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerElementSwitch
   currentElement: 0
-  spriteRenderer: {fileID: 1499083417}
-  waterSprite: {fileID: 5832261104388927974, guid: b2c9c4da99b404c2186c7de52f8ead23, type: 3}
-  sandSprite: {fileID: -6936906221926352604, guid: fa716c36e60734fea8955fde02ce232b, type: 3}
-  natureSprite: {fileID: 2294202180577567580, guid: dd0d185df9fda43e49fd1036b1a2e234, type: 3}
 --- !u!114 &1571869174
 MonoBehaviour:
   m_ObjectHideFlags: 0
