@@ -5,6 +5,8 @@ public class SandPlatform : Interactable
 {
     [Header("Sand Platform")]
     public GameObject platformObject;
+    public GameObject sandplatformsprite;
+    public GameObject sandplatformsprite2;
     public float activeTime = 4f;
 
     private bool isActive = false;
@@ -24,6 +26,8 @@ public class SandPlatform : Interactable
         if (platformObject != null)
         {
             platformObject.SetActive(true);
+            sandplatformsprite.SetActive(true);
+            sandplatformsprite2.SetActive(true);
         }
 
         Debug.Log("Sand platform created!");
@@ -33,6 +37,8 @@ public class SandPlatform : Interactable
         if (platformObject != null)
         {
             platformObject.SetActive(false);
+            sandplatformsprite.SetActive(false);
+            sandplatformsprite2.SetActive(false);
         }
 
         isActive = false;
